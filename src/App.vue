@@ -6,6 +6,7 @@
     <!-- MAIN CONTENT -->
     <main>
       <MainContent />
+      <Shop />
     </main>
 
     <!-- FOOTER -->
@@ -18,32 +19,57 @@
 <script>
 import Header from '@/components/Header.vue'
 import MainContent from '@/components/MainContent.vue'
+import Shop from '@/components/Shop.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
     MainContent,
+    Shop,
   }
 }
 </script>
 
 <style>
+/* GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  /* UTILITIES */
-  img {
-    max-width: 100%;
-  }
+body {
+  font-family: sans-serif;
+  font-size: 14px;
+}
 
-  .df {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+/* UTILITIES */
+img {
+  max-width: 100%;
+}
 
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.df {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ttu {
+  text-transform: uppercase;
+}
 
 </style>

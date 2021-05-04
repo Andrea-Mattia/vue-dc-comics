@@ -1,13 +1,13 @@
 <template>
     <header class="df container">
-        <a href="#">
+        <a class="brand-logo" href="#">
             <img src="../assets/img/dc-logo.png" alt="dc-logo-header">
         </a>
 
         <nav>
             <ul class="df">
                 <li v-for="(link, index) in headerLinks" :key="index">
-                    <a :class="{active : link.current}" :href="link.url">{{ link.text }}</a>
+                    <a class="ttu" :class="{active : link.current}" :href="link.url">{{ link.text }}</a>
                 </li>
             </ul>
         </nav>
@@ -38,25 +38,23 @@ export default {
 
 <style scoped>
 
-    header.container {
-        justify-content: space-between;
-        min-height: 150px;
-    }
+header.container {
+    justify-content: space-between;
+    min-height: 100px;
+}
 
-    ul {
-        list-style: none;
-    }
+.brand-logo img {
+    height: 80px;
+}
 
-    li a {
-        text-transform: uppercase;
-        text-decoration: none;
-        color: #000;
-        padding: 60px 0.5rem;
-    }
+li a {
+    color: #000;
+    padding: 38px 0.5rem;
+}
 
-    li a.active,
-    li a:hover {
-        border-bottom: 5px solid #1181e8;
-    }
+li a.active,
+li a:hover {
+    border-bottom: 4px solid #1181e8;
+}
 
 </style>
