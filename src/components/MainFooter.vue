@@ -1,22 +1,21 @@
 <template>
     <section class="main-footer">
-        <div class="container df">
-            <div class="footer-left df">
+        <div class="container">
+            <div class="footer-left">
                 <div>
                     <div class="dc-comics">
                         <h3 class="ttu">{{footerLinks[actualIndex].title}}</h3>
                         <ul>
                             <li v-for="(link, index) in footerLinks[actualIndex].links" :key="index">
-                                <a href="#">{{link.text}}</a>
+                                <a :href="link.url">{{link.text}}</a>
                             </li>
                         </ul>
                     </div>
                     <div class="shop">
-
                         <h3 class="ttu">{{footerLinks[actualIndex + 1].title}}</h3>
                         <ul>
                             <li v-for="(link, index) in footerLinks[actualIndex + 1].links" :key="index">
-                                <a href="#">{{link.text}}</a>
+                                <a :href="link.url">{{link.text}}</a>
                             </li>
                         </ul>
                     </div>
@@ -25,7 +24,7 @@
                     <h3 class="ttu">{{footerLinks[actualIndex + 2].title}}</h3>
                     <ul>
                         <li v-for="(link, index) in footerLinks[actualIndex + 2].links" :key="index">
-                            <a href="#">{{link.text}}</a>
+                            <a :href="link.url">{{link.text}}</a>
                         </li>
                     </ul>
                 </div>
@@ -33,7 +32,7 @@
                     <h3 class="ttu">{{footerLinks[actualIndex + 3].title}}</h3>
                     <ul>
                         <li v-for="(link, index) in footerLinks[actualIndex + 3].links" :key="index">
-                            <a href="#">{{link.text}}</a>
+                            <a :href="link.url">{{link.text}}</a>
                         </li>
                     </ul>
                 </div>
@@ -56,31 +55,31 @@ export default {
                     links: [
                         {
                             text: 'Characters',
-                            url: '#',
+                            url: '/characters',
                         },
                         {
                             text: 'Comics',
-                            url: '#',
+                            url: 'comics',
                         },
                         {
                             text: 'Movies',
-                            url: '#',
+                            url: '/movies',
                         },
                         {
                             text: 'TV',
-                            url: '#',
+                            url: '/tv',
                         },
                         {
                             text: 'Games',
-                            url: '#',
+                            url: '/games',
                         },
                         {
                             text: 'Videos',
-                            url: '#',
+                            url: '/videos',
                         },
                         {
                             text: 'News',
-                            url: '#',
+                            url: '/news',
                         },
                     ],
                 },
@@ -89,11 +88,11 @@ export default {
                     links: [
                         {
                             text: 'Shop DC',
-                            url: '#',
+                            url: '/shopdc',
                         },
                         {
                             text: 'Shop DC Collectibles',
-                            url: '#',
+                            url: '/shopdccollect',
                         },
                     ],
                 },
@@ -101,48 +100,48 @@ export default {
                     title: 'dc',
                     links: [
                         {
-                            text: 'Termf Of Use',
-                            url: '#',
+                            text: 'Term Of Use',
+                            url: '/termofuse',
                         },
                         {
                             text: 'Privacy policy (New)',
-                            url: '#',
+                            url: '/privacypolicy',
                         },
                         {
                             text: 'Ad Choices',
-                            url: '#',
+                            url: '/adchoices',
                         },
                         {
                             text: 'Advertising',
-                            url: '#',
+                            url: '/advertising',
                         },
                         {
                             text: 'Jobs',
-                            url: '#',
+                            url: '/jobs',
                         },
                         {
                             text: 'Subscriptions',
-                            url: '#',
+                            url: '/subscriptions',
                         },
                         {
                             text: 'Talent Workshops',
-                            url: '#',
+                            url: '/talentworkshop',
                         },
                         {
-                            text: 'CPSC Certificares',
-                            url: '#',
+                            text: 'CPSC Certificates',
+                            url: '/cpsccertificates',
                         },
                         {
                             text: 'Ratings',
-                            url: '#',
+                            url: '/ratings',
                         },
                         {
                             text: 'Shop Help',
-                            url: '#',
+                            url: '/shophelp',
                         },
                         {
                             text: 'Contact Us',
-                            url: '#',
+                            url: '/contactus',
                         },
                     ],
                 },
@@ -151,23 +150,23 @@ export default {
                     links: [
                         {
                             text: 'DC',
-                            url: '#',
+                            url: '/dc',
                         },
                         {
                             text: 'MAD Magazine',
-                            url: '#',
+                            url: '/madmagazine',
                         },
                         {
                             text: 'Dc Kids',
-                            url: '#',
+                            url: '/dckids',
                         },
                         {
                             text: 'DC Universe',
-                            url: '#',
+                            url: '/dcuniverse',
                         },
                         {
                             text: 'DC Power Visa',
-                            url: '#',
+                            url: '/dcpowervisa',
                         },
                     ],
                 },
@@ -178,7 +177,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import '../styles/vars';
+@import '../styles/mixins';
 
 .main-footer {
     background-image: url('../assets/img/footer-bg.jpg');
@@ -186,11 +187,13 @@ export default {
 }
 
 div.container {
+    @include df('vertical');
     justify-content: space-between;
 }
 
 /* FOOTER LEFT */
 .footer-left {
+    display: flex;
     width: 360px;
     padding: 2rem 0;
     justify-content: space-between;
@@ -208,16 +211,14 @@ ul {
 
 li {
     padding: 2px 0;
-}
-
-li a {
-    font-size: 12px;
-    color: rgba(255, 255, 255, .7);
-    transition: color .3s;
-}
-
-li a:hover {
-    color: #fff;
+    a {
+        font-size: 12px;
+        color: $transparent-links;
+        transition: color .3s;
+        &:hover {
+            color: #fff;
+        }
+    }
 }
 
 /* FOOTER RIGHT */

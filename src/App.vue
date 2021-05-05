@@ -12,15 +12,17 @@
     <!-- FOOTER -->
     <footer>
       <MainFooter />
+      <FooterSocials />
     </footer>
   </div>
 </template>
 
 <script>
-import Header from '@/components/Header.vue'
-import MainContent from '@/components/MainContent.vue'
-import Shop from '@/components/Shop.vue'
-import MainFooter from '@/components/MainFooter.vue'
+import Header from '@/components/Header.vue';
+import MainContent from '@/components/MainContent.vue';
+import Shop from '@/components/Shop.vue';
+import MainFooter from '@/components/MainFooter.vue';
+import FooterSocials from '@/components/FooterSocials.vue';
 
 export default {
   name: 'App',
@@ -29,49 +31,14 @@ export default {
     MainContent,
     Shop,
     MainFooter,
+    FooterSocials,
   }
 }
 </script>
 
-<style>
-/* GENERAL */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<style lang="scss">
 
-body {
-  font-family: sans-serif;
-  font-size: 14px;
-}
-
-/* UTILITIES */
-img {
-  max-width: 100%;
-}
-
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-.df {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.ttu {
-  text-transform: uppercase;
-}
+@import './styles/general';
+@import './styles/utilities';
 
 </style>

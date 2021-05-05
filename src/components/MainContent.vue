@@ -1,6 +1,6 @@
 <template>
   <section class="jumbotron">
-      <div class="container df">
+      <div class="container">
         <h1>CONTENT GOES HERE</h1>
       </div>
   </section>
@@ -12,7 +12,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import '../styles/mixins';
 
 .jumbotron {
   padding: 3rem;
@@ -21,6 +22,7 @@ export default {
 }
 
 div.container {
+  @include df('vertical');
   justify-content: flex-start;
 }
 
