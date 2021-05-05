@@ -11,7 +11,7 @@
 
     <!-- FOOTER -->
     <footer>
-      footer here
+      <MainFooter />
     </footer>
   </div>
 </template>
@@ -20,6 +20,7 @@
 import Header from '@/components/Header.vue'
 import MainContent from '@/components/MainContent.vue'
 import Shop from '@/components/Shop.vue'
+import MainFooter from '@/components/MainFooter.vue'
 
 export default {
   name: 'App',
@@ -27,6 +28,7 @@ export default {
     Header,
     MainContent,
     Shop,
+    MainFooter,
   }
 }
 </script>
