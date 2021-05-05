@@ -58,6 +58,8 @@ li {
     a {
         color: #000;
         padding: 38px 0.5rem;
+        border-bottom: 4px solid transparent;
+        transition: border-color .3s;
         &.active,
         &:hover {
             border-bottom: 4px solid $brand-color;
